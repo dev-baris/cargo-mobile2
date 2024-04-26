@@ -195,14 +195,16 @@ impl<'a> Call<'a> {
             }
             _ => (),
         }
+        /*
         let source = self.source.to_string_lossy();
         let target_override = self.target_override.as_ref().to_string_lossy();
         args.push(&source);
         args.push(&target_override);
-        duct::cmd("sudo ln", args)
+        duct::cmd("ln", args)
             .dup_stdio()
             .run()
             .map_err(|err| self.make_error(ErrorCause::CommandFailed(err)))?;
+        */
         Ok(())
     }
 
